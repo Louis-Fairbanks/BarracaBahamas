@@ -1,0 +1,39 @@
+#cardlist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: fit-content;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+.card p{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.card:hover{
+    cursor: pointer;
+    border: 2px solid black;
+}
+.card h2{
+    margin-bottom: 0;
+}
+.card-image{
+    height: 200px;
+    width: 200px;
+}
+.name-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: last baseline;
+}
+.card-brand{
+    margin-top: 0;
+    font-size: larger;
+}

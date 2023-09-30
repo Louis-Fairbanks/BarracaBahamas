@@ -2,18 +2,17 @@
     font-family: 'Museful';
     src: url('../assets/museful-regular.otf') format('opentype');
 }
-:root{
-    background: linear-gradient(to bottom, #bdc3c7, #acd0f6);
-}
 #header{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 5px;
 }
 #header img{
     height: 48px;
     border-radius: 20px;
 }
-#header button{
+#itemsButton{
     height: 24px;
     border-radius: 30px;
     border: none;
@@ -23,6 +22,33 @@
 #header > *:hover {
     cursor: pointer;
 }
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+  .searchbar form{
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+  }
+  .searchbar input {
+    padding: 7px;
+    border-radius: 3px;
+    width: 33vw;
+    font-size: 1.5rem;
+    border: none;
+  }
+  .searchbar input:focus::placeholder{
+    color: transparent;
+  }
+  .searchbar button{
+    background-color: rgb(47, 255, 82);
+    border: none;
+    border-radius: 5px;
+    height: 5.5vh;
+  }
 #cartIcon{
     margin-top: 9px;
 }
@@ -36,14 +62,16 @@
 #header h1{
     text-shadow: 1px 1px 2.5px  rgba(0, 0, 0, 0.3);
     margin: 0 auto 0 0;
-    font-size: 4rem;
+    font-size: 3rem;
+    white-space: nowrap;
 }
 #header h2{
     color: white;
     text-shadow: 2px 2px 5px  rgba(0, 0, 0, 0.3);
     font-weight: 400;
     margin: 10px 14px auto 3px;
-    font-size: 2rem;
+    font-size: 1.75rem;
+    white-space: nowrap;
 }
 .row-element{
     display: inline-flex;

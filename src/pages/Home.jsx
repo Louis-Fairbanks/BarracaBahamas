@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import barracaBahamasFavicon from "../assets/barracaBahamasFavicon.svg"
 import escalera from "../assets/escalera.jpg"
 import cortadora from "../assets/cortadora.jfif"
 import llana from "../assets/llana.jfif"
@@ -9,8 +8,6 @@ import botellaSpray from '../assets/botellaSpray.jpg'
 import tornillo from '../assets/tornillo.jpg'
 import nuestroEquipo from '../assets/nuestroEquipo.jpg'
 import '../styles/Home.css'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -18,11 +15,10 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 
 export default function Home() {
-    const [items, setItems] = useState(0);
-    const [username, setUsername] = useState('Mi Cuenta')
     const [activeSection, setActiveSection] = useState('section1')
     const sliderRef = useRef(null);
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -70,7 +66,7 @@ export default function Home() {
         }
       }
       const handleDownScroll = () =>{
-        if(activeSection === 'header'){
+        if(activeSection === 'headerSection'){
             sectionRefs.section2.current.scrollIntoView({ behavior: 'smooth'})
         }
         if(activeSection === 'section2'){
@@ -107,19 +103,8 @@ export default function Home() {
 
   return (
     <>
-      <div id="header" ref={sectionRefs.section1}>
-        <div className="row-element">
-          <img src={barracaBahamasFavicon} alt="barraca Bahamas logo" />
-          <h1 className="gradient-text">Barraca Bahamas</h1>
-        </div>
-        <div className="row-element">
-        <h2 className="jumping-heading">Contacto</h2>
-          <h2 className="jumping-heading">Productos</h2>
-          <ShoppingCartIcon id="cartIcon" />
-          <button>{items}</button>
-          <h2 className="jumping-heading">{username}</h2>
-          <AccountCircleIcon id="accountIcon" />
-        </div>
+      <div id='headerSection' ref={sectionRefs.section1}>
+        <Header/>
       </div>
       <div className="body">
         {(scrollPosition > 500) && <KeyboardArrowUpIcon onClick={handleUpScroll} id="upIcon" />}

@@ -1,0 +1,37 @@
+
+Header{
+    flex: 0 0 auto;
+}
+.products-page {
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    padding: 10px;
+  }
+  .sidebar {
+    width: 175px;
+    margin-right: 10px;
+    height: 100vh;
+  }
+  
+  .sidebar h4 {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul {
+    list-style-type:none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 5px;
+  }
+  
+  .cardlist-container {
+    display: inline-flex;
+    flex: 1;
+    max-width: 80vw;
+  }
+  .main-products{
+    display: flex;
+  }

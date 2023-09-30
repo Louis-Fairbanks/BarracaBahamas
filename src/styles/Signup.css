@@ -1,0 +1,20 @@
+#signupSection{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+Header{
+    flex: 0 0 auto;
+}
+#signupBody{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+}
+#signupBody h1{
+    margin-top: 10vh;
+    text-align: center;
+    font-size: 6vh;
+}
