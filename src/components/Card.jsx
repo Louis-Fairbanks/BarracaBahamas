@@ -1,9 +1,17 @@
 import React from 'react';
 import '../styles/Card.css';
+import { useNavigate } from 'react-router-dom';
 
 const Card = ({ image, name, price, brand, SKU, weight }) => {
+  
+  const navigate = useNavigate();
+
+  const navigateToItem = () => {
+    const navigationString = '/' + SKU
+    navigate(navigationString)}
+
   return (
-    <div className="card">
+    <div className="card" onClick={navigateToItem}>
       <img src={image} alt={name} className="card-image" />
       <div className="card-details">
         <div className='name-price'>

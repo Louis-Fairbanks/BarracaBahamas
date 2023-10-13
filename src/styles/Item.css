@@ -1,0 +1,60 @@
+#itemSection{
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;  
+}
+#itemBody{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+#itemBody img{
+    width: 300px;
+    height: 300px;
+    margin-right: 3vw;
+}
+#itemBody p{
+    margin: 5px auto;
+}
+#itemBody h3{
+    margin-bottom: 5px;
+}
+#addButton{
+    margin: 0 !important;
+}
+#adjustQuantity{
+    text-align: center;
+    margin-top: 1vh;
+    font-size: 1.5rem;
+}
+#adjustQuantity button{
+    background-color: orange;
+    border: none;
+    font-size: 1.5rem;
+    padding: 5px;
+    width: 2vw;
+}
+#minusButton{
+    border-radius: 5px 0 0 5px;
+}
+#plusButton{
+    border-radius: 0 5px 5px 0;
+}
+#adjustQuantity button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+#adjustQuantity span{
+    background-color: black;
+    color: white;
+    padding: 1px 5px 4.5px 5px;
+}
+#quantityMarker{
+    display: inline;
+    margin-right: 1.5vh;
+}
+#adjustQuantity h5{
+    margin-top: 1vh;
+}

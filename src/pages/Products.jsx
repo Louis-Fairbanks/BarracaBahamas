@@ -29,6 +29,7 @@ const Products = () => {
     setFilteredProducts(filterResults(searchTerm ? products.filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase())) : products));
   }, [searchTerm]);
 
+
   function filterResults(arr) {
     if(filters.length === 0){
       return arr
@@ -42,13 +43,27 @@ const Products = () => {
       if(filters.includes('precio')){
         arr = arr.slice().sort((a, b) => a.price - b.price)
       }
+      if(filters.includes('plomeria')){
+        arr = arr.filter((product) => product.category === 'Plomeria')
+      }
+      if(filters.includes('pinturas')){
+        arr = arr.filter((product) => product.category === 'Pinturas')
+      }
+      if(filters.includes('maderas')){
+        arr = arr.filter((product) => product.category === 'Maderas')
+      }
+      if(filters.includes('herramientas')){
+        arr = arr.filter((product) => product.category === 'Herramientas')
+      }
+      if(filters.includes('otros')){
+        arr = arr.filter((product) => product.category === 'Otros')
+      }
     }
     return arr;
   }
   //useEffect to sort items on every filter change
   useEffect(() => {
     setFilteredProducts(filterResults(filteredProducts))
-    console.log(filters)
   }, [filters])
 
   const handleFilterChange = (e) => {

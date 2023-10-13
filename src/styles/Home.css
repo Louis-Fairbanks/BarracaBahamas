@@ -19,6 +19,9 @@
     margin: 17.5px 5px auto auto;
     background-color: #5daf3a;
 }
+#itemsButton{
+  cursor: pointer;
+}
 #header > *:hover {
     cursor: pointer;
 }
