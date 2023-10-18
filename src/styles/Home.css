@@ -1,6 +1,8 @@
 @font-face{
     font-family: 'Museful';
     src: url('../assets/museful-regular.otf') format('opentype');
+    font-family: 'WorkSans';
+    src: url(../assets/WorkSans-ExtraBold.ttf) format('truetype');
 }
 #header{
     display: flex;
@@ -59,9 +61,6 @@
     margin-top: 12px;
     margin-left: -7px;
 }
-#section1{
-    min-height: 100vh;
-}
 #header h1{
     text-shadow: 1px 1px 2.5px  rgba(0, 0, 0, 0.3);
     margin: 0 auto 0 0;
@@ -76,16 +75,116 @@
     font-size: 1.75rem;
     white-space: nowrap;
 }
+.gradient-text {
+  background: linear-gradient(to right, #0097b2, #7ed957);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#menu-icon{
+  position: absolute;
+}
+@media (width < 1100px){
+  #header h1{
+    font-size: 2rem;
+  }
+  .searchbar input{
+    font-size: 1rem;
+  }
+}
+@media (width <877px){
+  #header h1{
+    font-size: 1.5rem;
+  }
+}
+@media (width < 700px){
+  .searchbar input{
+    width: 25vw;
+  }
+  #header h2{
+    font-size: 1rem !important;
+  }
+}
+@media (width < 920px){
+  #header h2{
+    font-size: 1.25rem;
+  }
+}
+@media (width < 610px){
+  #header h1{
+    margin-right: 0px;
+    font-size: 1rem;
+  }
+}
+@media (width < 500px){
+  #menu-icon{
+    transform: scale(1) !important;
+    margin-right: -20px;
+    visibility: visible !important;
+  }
+  .searchbar button{
+    transform: scale(.8);
+    margin-left: -8px;
+  }
+  #header img{
+    transform: scale(.6);
+  }
+  #header h1{
+    margin-left: -10px;
+  }
+  .show{
+    margin-top: 60px;
+  }
+
+}
+@media (width < 350px){
+  .searchbar input{
+    width: 10vw;
+    margin-left: -20px;
+  }
+}
+@media (width >= 1350px) {
+  #menu-icon{
+    visibility: hidden;
+  }
+}
+@media  (width < 1350px) {
+  html body{
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  .header-options{
+    display: none !important;
+  }
+  .show{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 0;
+    visibility: visible !important;
+    z-index: 3;
+    background-color: gray;
+    border-bottom-left-radius: 10px;
+  }
+  .show #cartIcon, .show #accountIcon, .show #itemsButton{
+    display: inline-flex !important;
+  }
+  #menu-icon{
+    visibility: visible;
+    right: 22px;
+    top: 22px;
+    transform: scale(1.75);
+    color: white;
+  }
+}
+#section1{
+  min-height: 100vh;
+}
 .row-element{
     display: inline-flex;
     align-items: center;
     height: fit-content;
 }
-.gradient-text {
-    background: linear-gradient(to right, #0097b2, #7ed957);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
   .centered-column{
     display: flex;
     flex-direction: column;
@@ -94,7 +193,7 @@
 .btn {
     border: none;
     border-radius: 10px;
-    background: linear-gradient(to right, #0097b2, #7ed957);;
+    background-color: rgb(212, 38, 38);
     color: white;
     font-size: 2rem;
     padding: 15px;
@@ -115,15 +214,63 @@
     height: 200px;
     width: 200px;
 }
-.slider{
-    max-width: 300px;
-}
 .main-header{
     width: 30vw;
     font-size: 10vh;
     margin: 7vh 15vw;
     text-align: center;
-    font-family: 'Museful', sans-serif;
+    font-family: 'WorkSans', sans-serif;
+}
+@media (width < 1366px) {
+  .main-header{
+    font-size: 8vh;
+  }
+@media (width < 1150px){
+  .main-header{
+    font-size: 6vh;
+  }
+  .btn{
+    font-size: 1.5rem;
+  }
+}
+@media(width < 850px){
+  .main-header{
+    font-size: 4vh;
+  }
+  .btn{
+    font-size: 1rem;
+  }
+}
+@media (width < 1000px){
+  .slider{
+    transform: scale(1.1) !important;
+  }
+}
+@media(width < 940px){
+  .slider{
+    transform: scale(.8) !important;
+  }
+}
+@media(width< 850px){
+  #section1, #section2{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+  }
+  #secondSlider{
+    margin-left: 0 !important;
+  }
+  .main-header{
+    width: 60%;
+    font-size: 6vh;
+  }
+}
+@media(width < 440px){
+  .main-header{
+    font-size: 4vh;
+  }
+}
 }
 #chatIcon{
     position: fixed;
@@ -133,6 +280,11 @@
     color: white;
     background-color: #5daf3a;
     border-radius: 5px;
+}
+@media(width <500px){
+  #chatIcon{
+    transform: scale(1.5);
+  }
 }
 #downIcon{
     position: fixed;
@@ -163,6 +315,7 @@
 .slider {
     display: flex;
     justify-content: center;
+    max-width: 300px;
     transform: scale(1.4);
   }
   .slide {
@@ -189,6 +342,26 @@
 #nuestroEquipo{
     height: 384px;
     width: 576px;
+}
+@media (width < 1100px){
+  #nuestroEquipo{
+    height: 288px;
+    width: 432px;
+  }
+}
+@media(width < 900px){
+  #nuestroEquipo{
+    align-self: center;
+  }
+  #section3{
+    flex-direction: column;
+  }
+  #section3 p{
+    width: 75vw !important;
+  }
+  #section3 h2{
+    width: 75vw !important;
+  }
 }
 #section3 h2{
     margin: 7vh 12vw;

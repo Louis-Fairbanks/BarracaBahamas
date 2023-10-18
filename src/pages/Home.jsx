@@ -16,12 +16,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState('section1')
     const sliderRef = useRef(null);
     const [scrollPosition, setScrollPosition] = useState(0);
+    const navigate = useNavigate();
 
     //scrolling functionality
     const sectionRefs = {
@@ -111,7 +113,7 @@ export default function Home() {
         <div  id='section1' className="row-element">
           <div className="centered-column">
             <h1 className="main-header">Los mejores precios de las mejores marcas</h1>
-            <button className="btn">Explora productos ahora!</button>
+            <button onClick={() => navigate("/productos")} className="btn">Explora productos ahora!</button>
           </div>
           <div>
             <Slider ref={sliderRef} {...settings} className="slider">
@@ -155,7 +157,7 @@ export default function Home() {
           </div>
           <div className="centered-column">
             <h1 className="main-header">Productos Destacados</h1>
-            <button className="btn">Explora nuestras ofertas!</button>
+            <button className="btn" onClick={() => navigate("/productos")}>Explora nuestras ofertas!</button>
           </div>
         </div>
       </div>

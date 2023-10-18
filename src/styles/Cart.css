@@ -10,6 +10,28 @@
     padding: 3px;
     z-index: 3;
 }
+@media (width < 1350px) {
+    .cart-container{
+        position: absolute;
+        right: 0;
+        top: 184.3px;
+    }
+}
+@media (width < 920px){
+    .cart-container{
+        top: 150px;
+    }
+}
+@media (width < 700px){
+    .cart-container{
+        top: 140px;
+    }
+}
+@media (width < 500px){
+    .cart-container{
+        top: 200px !important;
+    }
+}
 .cart-item p{
     margin: 1vh auto;
     display: flex;
