@@ -36,9 +36,13 @@ export default function Header({ filters }) {
   }, []);
 
   useEffect(() => {
+    try{
     if (cookies.get('loggedInUser')) {
       const userToParse = cookies.get('loggedInUser');
       setUsername(userToParse.username);
+    }} catch (err){
+      console.log(err)
+      navigate('/')
     }
   }, []);
 

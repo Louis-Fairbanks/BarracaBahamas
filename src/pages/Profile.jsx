@@ -42,9 +42,13 @@ export default function Profile() {
   };
 
   useEffect(() => {
+    try{
     const userToParse = cookies.get('loggedInUser');
     if(userToParse){
       login(userToParse)
+    }} catch(err){
+      console.log(err)
+      navigate('/')
     }
   }, [])
 
