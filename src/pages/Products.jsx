@@ -95,8 +95,8 @@ const Products = () => {
       <Header filters={filters.length > 0 ? filters : null} />
       <div className="products-page">
         <div className="main-products">
-          {/* Sidebar */}
           <div className="sidebar">
+          <div>
             <h4>Ordenar por</h4>
             <div>
               <input type="checkbox" id="precio" onChange={handleFilterChange}/>
@@ -110,6 +110,8 @@ const Products = () => {
               <input type="checkbox" id="stock" onChange={handleFilterChange}/>
               <label htmlFor="stock">Stock</label>
             </div>
+            </div>
+            <div>
             <h4>Buscar por categoría</h4>
             <div>
               <input type="checkbox" id="plomeria" onChange={handleFilterChange}/>
@@ -131,8 +133,8 @@ const Products = () => {
               <input type="checkbox" id="otros" onChange={handleFilterChange}/>
               <label htmlFor="otros">Otros</label>
             </div>
+            </div>
           </div>
-          {/* Cardlist */}
           <div className="cardlist-container">
             <Cardlist cards={filteredProducts} />
           </div>

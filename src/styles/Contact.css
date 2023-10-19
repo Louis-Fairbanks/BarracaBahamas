@@ -1,7 +1,16 @@
 #contactPage{
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
+}
+@media(width < 700px){
+  .contact-info{
+    flex-direction: column;
+  }
+  .map-wrap{
+    width: 75vw !important;
+  }
 }
 #contactBody{
   display: inline-flex;

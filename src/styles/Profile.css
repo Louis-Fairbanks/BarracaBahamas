@@ -1,7 +1,8 @@
 #profile{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    height: fit-content;
 }
 #profileSection button{
     border: none;
@@ -27,22 +28,35 @@
 }
 
 table {
-    border-collapse: collapse;
-    width: 60%;
-    table-layout: auto;
+  width: 100%;
+  border-collapse: collapse;
+}
+@media(width > 500px){
+  table{
+    width: 75%;
   }
-  th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background-color: white;
-  }
-  th {
-    background-color: rgb(207, 202, 202);
-  }
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+tbody td:not(:empty):before {
+  content: attr(data-label);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
   #historial{
     display: flex;
     flex-direction: column;

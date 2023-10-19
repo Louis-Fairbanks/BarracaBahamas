@@ -171,7 +171,7 @@ export default function Home() {
         </div>
         <img id='nuestroEquipo' src={nuestroEquipo} alt="nuestro equipo" />
       </div>
-      <Footer/>
+      <Footer id='home-footer'/>
     </>
   );
 }

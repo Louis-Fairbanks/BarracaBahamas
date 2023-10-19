@@ -1,7 +1,8 @@
 #signupSection{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    height: fit-content;
 }
 Header{
     flex: 0 0 auto;
@@ -17,4 +18,10 @@ Header{
     margin-top: 10vh;
     text-align: center;
     font-size: 6vh;
+}
+@media (width < 675px) {
+    #signupBody input, #signupBody button{
+        width: 200px !important;
+        align-self: center;
+    }
 }

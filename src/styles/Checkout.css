@@ -1,7 +1,8 @@
 .checkout-container{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    height: fit-content;
 }
 .checkout-list{
     width: 65vw;
@@ -49,4 +50,21 @@
     color: white;
     font-size: 1.75rem;
     padding: 10px 15px;
+}
+@media (width < 1000px){
+    .checkout-list{
+        margin: 38px auto 0 auto !important;
+        width: 95vw;
+    }
+    #nombre-columna{
+        flex: 1 !important;
+    }
+    #cart-item-name{
+        flex: 1 !important;
+    }
+}
+@media (width < 400px){
+    .cart-header h2{
+        font-size: 1rem;
+    }
 }

@@ -1,7 +1,8 @@
 #loginSection{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    height:fit-content;
 }
 Header {
     flex:  0 0 auto;
@@ -37,4 +38,9 @@ Header {
 #loginBody h4:hover{
     color:blue;
     cursor: pointer;
+}
+@media (width < 420px){
+    .login-form > *{
+        font-size: .9rem;
+    }
 }
