@@ -1,7 +1,8 @@
 #itemSection{
-    height: 100vh; 
+    min-height: 100vh; 
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
+    height: fit-content;
 }
 #itemBody{
     display: flex;
@@ -57,4 +58,19 @@
 }
 #adjustQuantity h5{
     margin-top: 1vh;
+}
+@media (width < 853px){
+    #plusButton, #minusButton{
+        width: 3vw !important;
+    }
+}
+@media (width < 600px){
+    #itemBody{
+        flex-direction: column;
+    }
+    #itemBody img{
+        margin: 20px 0 auto 0 !important;
+    }
+    #plusButton, #minusButton{
+        width: 5.5vw !important;}
 }
