@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { UserContext } from "../contexts/UserContext";
 import { CartContext } from "../contexts/CartContext";
 import Stripe from "../components/Stripe";
+import { useNavigate } from "react-router-dom";
 
 export default function Checkout() {
   const userContext = useContext(UserContext);
@@ -12,8 +13,15 @@ export default function Checkout() {
   const { user } = userContext;
   const { cartItems, adjustQuantity } = cartContext;
   const [proceed, setProceed] = useState(false);
+  const navigate = useNavigate();
 
   const totalPrice = cartItems.reduce((total, item) => total + item.quantity * item.price, 0).toFixed(2);
+
+  const verifyUser = () => {
+    if (user){
+      setProceed(true);
+    } else{navigate('/inicio');}
+  }
 
   return (
     <div className="checkout-container">
@@ -41,7 +49,7 @@ export default function Checkout() {
           <p style={{flex: 5}}>Precio Total</p>
           <p>${totalPrice}</p>
         </div>
-      <button onClick={() => {setProceed(true)}}
+      <button onClick={() => verifyUser()}
       className="proceed-to-pay-button jumping-heading">Continuar</button>
       {proceed && <Stripe/>}
       </div>

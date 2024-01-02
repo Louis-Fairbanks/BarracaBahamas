@@ -398,5 +398,55 @@ export const products = [
     "weight": 0.25,
     "stock": 18,
     "category": "Plomeria"
+  },
+  {
+    'image': 'https://www.castro.com.uy/contentimg/6123/1/d/17024_M.jpg',
+    'name': 'Ladrillo Campo',
+    'price': 0.20,
+    'brand': 'Común',
+    'SKU': 678901238,
+    'weight': 4,
+    'stock': 2000,
+    'category': 'Otros'
+  },
+  {
+    'image': 'https://http2.mlstatic.com/D_NQ_NP_636990-MLU44370365341_122020-O.webp',
+    'name': 'Cortadora de Cesped',
+    'price': 400,
+    'brand': 'Honda',
+    'SKU': 234578930,
+    'weight': 120,
+    'stock': 8,
+    'category': 'Otros'
+  },
+  {
+    'image': 'https://www.airetotal.com.uy/wp-content/uploads/2021/01/Tornillo-punta-mecha-cabeza-philips-1-NUEVA.jpg',
+    'name': 'Tornillos Punta Mecha x100',
+    'price': 4,
+    'brand': 'Fixser',
+    'SKU': 567234634,
+    'weight': 1,
+    'stock': 20,
+    'category': 'Otros'
+  },
+  {
+    'image': 'https://sodimac.scene7.com/is/image/SodimacUruguay/2007010',
+    'name': 'Bolsa Pedregullo',
+    'price': 5,
+    'brand': 'Cantera Blanes',
+    'SKU': 683760394,
+    'weight': 20,
+    'stock': 100,
+    'category': 'Otros'
+  },
+  {
+    'image': 'https://m.media-amazon.com/images/I/61h7YAHNxHL.jpg',
+    'name': 'Botella Spray 100cc',
+    'price': 2.5,
+    'brand': 'Sprayz',
+    'SKU': 475928735,
+    'weight': 1,
+    'stock': 10,
+    'category': 'Otros'
   }
 ];
