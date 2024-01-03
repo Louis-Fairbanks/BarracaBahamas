@@ -119,7 +119,7 @@ export default function Home() {
             </div>
           </div>
           <div id='brick' className="row-2 column-1" onClick={() => navigate('/678901238')}>
-          <div id='ribbon-holder'></div>
+          <span></span>
             <div id='ladrillo-header'>
                 Ladrillo de Campo 100 x $20
             </div>

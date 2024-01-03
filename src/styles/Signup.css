@@ -25,3 +25,8 @@ Header{
         align-self: center;
     }
 }
+@media(orientation: landscape){
+    #signupBody{
+        margin-top: 15vh;
+    }
+}

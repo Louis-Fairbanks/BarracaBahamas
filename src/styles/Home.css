@@ -49,9 +49,11 @@
 }
 
 .searchbar input {
+  box-sizing: border-box;
   padding: 7px;
   border-radius: 3px;
   width: 33vw;
+  height: 9vh;
   font-size: 1.5rem;
   border: none;
 }
@@ -64,7 +66,7 @@
   background-color: rgb(47, 255, 82);
   border: none;
   border-radius: 5px;
-  height: 5.5vh;
+  height: 9vh;
 }
 
 #cartIcon {
@@ -81,6 +83,11 @@
   margin: 0 auto 0 0;
   font-size: 3rem;
   white-space: nowrap;
+}
+@media (min-width: 1200px), (min-height: 600px) {
+  .searchbar input, .searchbar button {
+    height: 6vh;
+  }
 }
 
 #header h2 {
@@ -110,10 +117,6 @@
 
   .searchbar input {
     font-size: 1rem;
-  }
-
-  .searchbar button {
-    height: 4.2vh;
   }
 }
 
@@ -244,6 +247,7 @@
   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
   url('/src/assets/ladrillo-de-campo.jpg');
   overflow: hidden;
+  position: relative;
 }
 #brick:hover{
   cursor: pointer;
@@ -258,111 +262,45 @@
   font-weight: 500;
   color: white;
 }
-#ribbon-holder {
-  position: relative;
-}
-
-#ribbon-holder::before {
-  content: "MÁS POPULAR";
+#brick span{
   position: absolute;
-  top: -10.5vh;
-  right: -2.75vw;
-  padding: 10px 40px;
-  background-color: red;
-  color: white;
-  transform: rotate(45deg);
-  transform-origin: top right;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  font-size: 4vh !important;
-  text-shadow: none;
+  right:-10px;
+  top:-10px;
 }
-@media(width<1300px){
-  #ribbon-holder::before{
-    top: -9vh;
-    right:  -3vw;
-    font-size: 3vh !important;
-  }
+#brick span::before{
+  content: 'Más Popular';
+  position: absolute;
+  width: 150%;
+  background-color: red;
+  height: 50px;
+  transform: rotate(45deg) translateY(-20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vh;
+  font-weight: 600;
+  white-space: nowrap;
+  color: white;
 }
-@media(width<1250px){
-  #ribbon-holder::before{
-    top: -8vh;
-  }
+@media(width < 1000px){
+  #brick span{
+    width: 150px;
+    height: 150px;
+    }
 }
-@media(width<1200px){
-  #ribbon-holder::before{
-    right: -3vw;
-    top: -7vh;
-  }
-}
-@media(width<1150px){
-  #ribbon-holder::before{
-    right: -3.5vw;
-    top: -6vh;
-  }
-}
-@media(width<1100px){
-  #ribbon-holder::before{
-    right: -4vw;
-    top: -5vh;
-  }
-}
-@media(width<1050px){
-  #ribbon-holder::before{
-    right: -4.5vw;
-    top: -4vh;
-  }
-}
-@media(width<1000px){
-  #ribbon-holder::before{
-    right: -5vw;
-    top: -1vh;
-    padding: 10px 50px;
-  }
-}
-@media(width<950px){
-  #ribbon-holder::before{
-    right: -5.5vw;
-    top: 0vh;
-  }
-}
-@media(width<900px){
-  #ribbon-holder::before{
-    right: -5vw;
-    top: 1vh;
-  }
-}
-@media(width<800px){
-  #ribbon-holder::before{
-    padding-right: 35px;
-  }
-}
-@media(width<700px){
-  #ribbon-holder::before{
-    padding-right: 25px;
-  }
-}
-@media(width<600px){
-  #ribbon-holder::before{
-    padding-right: 40px;
-    font-size: 2vh !important;
-  }
-}
-@media(width<500px){
-  #ribbon-holder::before{
-    top: 3vh;
-    right: -7vw;
-  }
-}
-@media(width<400px){
-  #ribbon-holder::before{
-    top: 5vh;
-    right: -8vw;
-    white-space: nowrap;
-  }
-  
-  #ladrillo-header, #woods div{
-    padding-top: 10vh;
-  }
+@media(orientation: portrait){
+    #brick span::before{
+      font-size: 2vh;
+    }
+    #brick div, #woods div{
+      margin-top: 75%;
+    }
 }
 #brick, #brick:hover{
   background-position: center;
@@ -528,7 +466,7 @@
   position: fixed;
   bottom: 50px;
   right: 50px;
-  transform: scale(3);
+  transform: scale(2);
   color: white;
   background-color: #5daf3a;
   border-radius: 5px;
@@ -659,54 +597,5 @@
 @media (orientation: landscape){
   #section2{
     margin-top: 30vh;
-    margin-bottom: 30vh;
-  }
-  .searchbar button{
-    height: clamp(30px, 35px, 50px);
-  }
-}
-@media (orientation: landscape) and (width > 1200px){
-  #ribbon-holder::before{
-    top: -9vh;
-    width: 200px;
-    font-size: 3vh !important;
-  }
-}
-@media (orientation: landscape) and (width < 1200px){
-  #ribbon-holder::before{
-    top: -4vh;
-    width: 200px;
-    font-size: 3vh !important;
-  }
-}
-@media (orientation: landscape) and (width < 1050px){
-  #ribbon-holder::before{
-    top: -1vh;
-    width: 200px;
-    font-size: 3vh !important;
-  }
-}
-@media (orientation: landscape) and (width < 950px){
-  #ribbon-holder::before{
-    top: 1vh;
-    right: -7vw;
-    width: 200px;
-    font-size: 3vh !important;
-  }
-}
-@media (orientation: landscape) and (width < 850px){
-  #ribbon-holder::before{
-    top: 3vh;
-    right: -8vw;
-    width: 200px;
-    font-size: 3vh !important;
-  }
-}
-@media (orientation: landscape) and (width < 670px){
-  #ribbon-holder::before{
-    top: 5vh;
-    right: -9vw;
-    width: 200px;
-    font-size: 2vh !important;
-  }
+    margin-bottom: 30vh;}
 }

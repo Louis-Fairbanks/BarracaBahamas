@@ -44,3 +44,8 @@ Header {
         font-size: .9rem;
     }
 }
+@media (orientation: landscape){
+    #loginBody{
+        margin-top: 25vh;
+    }
+}
