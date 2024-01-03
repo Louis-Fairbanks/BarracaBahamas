@@ -9,7 +9,7 @@ export default function CartComponent() {
 
   const { cartItems } = cartContext;
 
-  let totalPrice;
+  let totalPrice = 0;
   if(cartItems){
   totalPrice = cartItems.reduce((total, item) => total + item.quantity * item.price, 0);}
 
@@ -17,7 +17,7 @@ export default function CartComponent() {
     <div className="cart-container" onClick={() => navigate('/pagar')}>
       {cartItems && cartItems.map((item, index) => (
         <div key={index} className="cart-item">
-        <div><p>{item.quantity} x {item.name}</p></div>
+        <div><p>{item.quantity} x {item.name}:</p></div>
         <div><p>Subtotal: ${item.quantity * item.price}</p></div> 
         </div>
       ))}

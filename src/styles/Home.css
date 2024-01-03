@@ -1,6 +1,8 @@
 @font-face {
   font-family: 'Museful';
   src: url('../assets/museful-regular.otf') format('opentype');
+}
+@font-face {
   font-family: 'WorkSans';
   src: url(../assets/WorkSans-ExtraBold.ttf) format('truetype');
 }
@@ -25,7 +27,7 @@
   background-color: #5daf3a;
 }
 
-#itemsButton {
+#itemsButton:hover {
   cursor: pointer;
 }
 
@@ -168,14 +170,13 @@
   }
 
 }
-
 @media (width < 350px) {
   .searchbar input {
     width: 10vw;
     margin-left: -20px;
   }
   #woods div, #brick div{
-    font-size: 4vh !important;
+    font-size: 4vh;
   }
 }
 
@@ -242,17 +243,12 @@
 #brick{
   background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
   url('/src/assets/ladrillo-de-campo.jpg');
-  background-position: center;
-  background-size:cover;
-  background-repeat: no-repeat;
+  overflow: hidden;
 }
 #brick:hover{
   cursor: pointer;
   background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),
   url('/src/assets/ladrillo-de-campo.jpg');
-  background-position: center;
-  background-size:cover;
-  background-repeat: no-repeat;
 }
 #brick div, #woods div{
   text-align: center;
@@ -269,98 +265,118 @@
 #ribbon-holder::before {
   content: "MÁS POPULAR";
   position: absolute;
-  top: -9.2vh;
+  top: -10.5vh;
   right: -2.75vw;
-  padding: 10px 35px 10px 30px;
+  padding: 10px 40px;
   background-color: red;
   color: white;
   transform: rotate(45deg);
   transform-origin: top right;
-  clip-path: polygon(18% 0, 0% 82%, 98% 90%, 78% 0%);
+  overflow: hidden;
   font-size: 4vh !important;
   text-shadow: none;
 }
-@media (width < 1300px){
+@media(width<1300px){
   #ribbon-holder::before{
-    font-size: 2.75vh !important;
+    top: -9vh;
+    right:  -3vw;
+    font-size: 3vh !important;
   }
 }
-@media (width < 1200px){
+@media(width<1250px){
   #ribbon-holder::before{
+    top: -8vh;
+  }
+}
+@media(width<1200px){
+  #ribbon-holder::before{
+    right: -3vw;
     top: -7vh;
+  }
+}
+@media(width<1150px){
+  #ribbon-holder::before{
+    right: -3.5vw;
+    top: -6vh;
   }
 }
 @media(width<1100px){
   #ribbon-holder::before{
+    right: -4vw;
     top: -5vh;
   }
 }
-@media(width < 1000px){
+@media(width<1050px){
   #ribbon-holder::before{
-    font-size: 1.6vh !important;
-    top: -8.2vh;
-  }
-}
-@media(width < 900px){
-  #ribbon-holder::before{
-    font-size: 1.6vh !important;
-    top: -5.8vh;
-  }
-}
-@media(width < 800px){
-  #ribbon-holder::before{
-    font-size: 1.6vh !important;
+    right: -4.5vw;
     top: -4vh;
   }
 }
-@media(width < 700px){
+@media(width<1000px){
   #ribbon-holder::before{
-    font-size: 1.6vh !important;
-    top: -2vh;
-    right: -4vw;
-  }
-}
-@media(width < 600px){
-  #ribbon-holder::before{
-    font-size: 1.6vh !important;
-    top: 0vh;
-    right: -4vw;
-  }
-}
-@media(width < 500px){
-  #ribbon-holder::before{
-    font-size: 1.6vh !important;
-    top: 2vh;
     right: -5vw;
-  }
-  #brick div{
-    padding-top: 2vh;
-  }
-  #woods div{
-    padding-top: 12vh;
+    top: -1vh;
+    padding: 10px 50px;
   }
 }
-@media(width < 400px){
+@media(width<950px){
   #ribbon-holder::before{
-    font-size: 1.6vh !important;
-    top: 5vh;
-    right: -6.5vw;
+    right: -5.5vw;
+    top: 0vh;
   }
 }
-#woods{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-  url('/src/assets/plywood.jpg');
+@media(width<900px){
+  #ribbon-holder::before{
+    right: -5vw;
+    top: 1vh;
+  }
+}
+@media(width<800px){
+  #ribbon-holder::before{
+    padding-right: 35px;
+  }
+}
+@media(width<700px){
+  #ribbon-holder::before{
+    padding-right: 25px;
+  }
+}
+@media(width<600px){
+  #ribbon-holder::before{
+    padding-right: 40px;
+    font-size: 2vh !important;
+  }
+}
+@media(width<500px){
+  #ribbon-holder::before{
+    top: 3vh;
+    right: -7vw;
+  }
+}
+@media(width<400px){
+  #ribbon-holder::before{
+    top: 5vh;
+    right: -8vw;
+    white-space: nowrap;
+  }
+  
+  #ladrillo-header, #woods div{
+    padding-top: 10vh;
+  }
+}
+#brick, #brick:hover{
   background-position: center;
   background-size:cover;
   background-repeat: no-repeat;
+}
+#woods{
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
+  center/cover no-repeat url('/src/assets/plywood.jpg');
 }
 #woods:hover{
   cursor: pointer;
   background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),
-  url('/src/assets/plywood.jpg');
-  background-position: center;
-  background-size:cover;
-  background-repeat: no-repeat;
+  center/cover no-repeat url('/src/assets/plywood.jpg');
 }
 .row-1 {
   grid-row: 1;
@@ -505,17 +521,6 @@
     #secondSlider {
       margin-left: 0 !important;
     }
-
-    /* .main-header {
-      width: 60%;
-      font-size: 6vh;
-    } */
-  }
-
-  @media(width < 440px) {
-    /* .main-header {
-      font-size: 4vh;
-    } */
   }
 }
 
@@ -648,4 +653,60 @@
 
 #home-footer {
   margin-top: auto;
+}
+
+/*** landscape mode ***/
+@media (orientation: landscape){
+  #section2{
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+  }
+  .searchbar button{
+    height: clamp(30px, 35px, 50px);
+  }
+}
+@media (orientation: landscape) and (width > 1200px){
+  #ribbon-holder::before{
+    top: -9vh;
+    width: 200px;
+    font-size: 3vh !important;
+  }
+}
+@media (orientation: landscape) and (width < 1200px){
+  #ribbon-holder::before{
+    top: -4vh;
+    width: 200px;
+    font-size: 3vh !important;
+  }
+}
+@media (orientation: landscape) and (width < 1050px){
+  #ribbon-holder::before{
+    top: -1vh;
+    width: 200px;
+    font-size: 3vh !important;
+  }
+}
+@media (orientation: landscape) and (width < 950px){
+  #ribbon-holder::before{
+    top: 1vh;
+    right: -7vw;
+    width: 200px;
+    font-size: 3vh !important;
+  }
+}
+@media (orientation: landscape) and (width < 850px){
+  #ribbon-holder::before{
+    top: 3vh;
+    right: -8vw;
+    width: 200px;
+    font-size: 3vh !important;
+  }
+}
+@media (orientation: landscape) and (width < 670px){
+  #ribbon-holder::before{
+    top: 5vh;
+    right: -9vw;
+    width: 200px;
+    font-size: 2vh !important;
+  }
 }
