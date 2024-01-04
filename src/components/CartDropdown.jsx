@@ -11,7 +11,8 @@ export default function CartComponent() {
 
   let totalPrice = 0;
   if(cartItems){
-  totalPrice = cartItems.reduce((total, item) => total + item.quantity * item.price, 0);}
+  totalPrice = cartItems.reduce((total, item) => total + item.quantity * item.price, 0);
+  totalPrice = totalPrice.toFixed(2);}
 
   return (
     <div className="cart-container" onClick={() => navigate('/pagar')}>
