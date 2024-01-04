@@ -59,6 +59,30 @@
 #adjustQuantity h5{
     margin-top: 1vh;
 }
+#cart-message{
+    position: fixed;
+    top: 10vh;
+    left: 25%;
+    width: 50%;
+    background-color: #d4edda;
+    color: #155724;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1000;
+    animation: slideDown 5s ease-out;
+    border-radius: 10px;
+}
+@keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+      opacity: 1;
+    }
+    20% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 @media (width < 853px){
     #plusButton, #minusButton{
         width: 3vw !important;

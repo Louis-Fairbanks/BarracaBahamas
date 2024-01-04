@@ -39,6 +39,28 @@ Header {
     color:blue;
     cursor: pointer;
 }
+#error-message{
+    position: fixed;
+    top: 10vh;
+    left: 25%;
+    width: 50%;
+    background-color: #f8d7da;
+    color: #721c24;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1000;
+    animation: slideDown 1s ease-out;
+    border-radius: 10px;
+}
+@keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+    }
+    20% {
+      transform: translateY(0);
+    }
+  }
 @media (width < 420px){
     .login-form > *{
         font-size: .9rem;

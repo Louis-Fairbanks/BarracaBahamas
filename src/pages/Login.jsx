@@ -10,6 +10,7 @@ export default function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState(null);
   const userContext = useContext(UserContext);
 
   const { user, login} = userContext;
@@ -29,14 +30,18 @@ export default function Login() {
       if (bcrypt.compareSync(password, JSON.parse(userToLogin).password)) {
         console.log("Login successful");
         login(JSON.parse(userToLogin));
-        navigate('/perfil')
+        navigate('/perfil');
       } else {
         // Passwords do not match
-        console.log("Incorrect password");
+        console.log("Incorrect password")
+        setMessage('Contraseña incorrecta');
+        setTimeout(() => setMessage(null), 5000);
       }
     } else {
       // User not found
       console.log("User not found");
+      setMessage('Usuario no encontrado');
+      setTimeout(() => setMessage(null), 5000);
     }
 
     // Clear form inputs
@@ -47,6 +52,11 @@ export default function Login() {
   return (
     <div id='loginSection'>
       <Header />
+      {message && 
+      <div id='error-message'>
+        {message}
+      </div>
+    }
       <div id='loginBody'>
         <h1>Entrando en tu cuenta te deja:</h1>
         <ul>

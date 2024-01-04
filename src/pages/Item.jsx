@@ -11,6 +11,7 @@ export default function Item() {
   const { id } = useParams();
   const product = products.find(product => product.SKU == id)
   const cartContext = useContext(CartContext);
+  const [message, setMessage] = useState(null);
 
   const { addToCart} = cartContext;
 
@@ -25,12 +26,15 @@ export default function Item() {
     
     addToCart(productInfo)
     product.stock -= quantity;
+    setMessage('Producto agregado al carrito');
+    setTimeout(() => setMessage(null), 5000);
     setQuantity(1);
   };
 
   return (
     <div id='itemSection'>
     <Header />
+    {message && <div id='cart-message'>{message}</div>}
       <div id="itemBody">
         <div>
           <img src={product.image} alt="Product" />

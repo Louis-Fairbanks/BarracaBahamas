@@ -69,14 +69,14 @@ export default function Profile() {
       <h2>Datos Personales</h2>
       <h3>Email: {user && user.email}</h3>
       <h3>
-        Telefono:{' '}
+        Teléfono:{' '}
         {user && user.phone ? (
           <>
             {user.phone}
-              <button onClick={() => setShowPhoneInput(true)}>Cambiar Telefono</button>
+              <button onClick={() => setShowPhoneInput(true)}>Cambiar Teléfono</button>
           </>
         ) : (
-          <button onClick={() => setShowPhoneInput(true)}>Agregar Telefono</button>
+          <button onClick={() => setShowPhoneInput(true)}>Agregar Teléfono</button>
         )}
         {showPhoneInput &&               <>
                 <input type="text" value={phoneInput} onChange={handlePhoneInputChange} />
@@ -84,14 +84,14 @@ export default function Profile() {
               </>}
       </h3>
       <h3>
-        Direccion:{' '}
+        Dirección:{' '}
         {user && user.address ? (
           <>
             {user.address}
-            <button onClick={() => setShowAddressInput(true)}>Cambiar direccion de despacho</button>
+            <button onClick={() => setShowAddressInput(true)}>Cambiar dirección de despacho</button>
           </>
         ) : (
-          <button onClick={() => setShowAddressInput(true)}>Agregar direccion de despacho</button>
+          <button onClick={() => setShowAddressInput(true)}>Agregar dirección de despacho</button>
         )}
           {showAddressInput && <><input type="text" value={addressInput} onChange={handleAddressInputChange} />
                 <button onClick={handleAddressSave}>Guardar</button></>}
@@ -111,7 +111,7 @@ export default function Profile() {
     <tbody>
       <tr>
         <td></td>
-        <td>Todavia no has hecho ninguna compra!</td>
+        <td>Todavía no has hecho ninguna compra!</td>
         <td></td>
         <td></td>
       </tr>
