@@ -97,8 +97,9 @@ export default function Profile() {
                 <button onClick={handleAddressSave}>Guardar</button></>}
       </h3>
     </div>
-        <div id='historial'>
-          <h2>Historial de Compras</h2>
+
+          <h2 id='historial-compras'>Historial de Compras</h2>
+          <div id='historial'>
           <table>
     <thead>
       <tr>
