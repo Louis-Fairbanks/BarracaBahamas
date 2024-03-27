@@ -244,15 +244,29 @@
   }
 }
 #brick{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-  url('/src/assets/ladrillo-de-campo.jpg');
+  background-image: url('/src/assets/ladrillo-de-campo.jpg');
   overflow: hidden;
   position: relative;
 }
+#brick::before, #woods::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 #brick:hover{
   cursor: pointer;
-  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),
-  url('/src/assets/ladrillo-de-campo.jpg');
+}
+#brick:hover::before, #woods:hover::before{
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease-in-out;
+}
+#ladrillo-header, #woods div{
+  z-index: 9999;
+  position: relative;
 }
 #brick div, #woods div{
   text-align: center;
@@ -308,13 +322,12 @@
   background-repeat: no-repeat;
 }
 #woods{
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
-  center/cover no-repeat url('/src/assets/plywood.jpg');
+  position: relative;
+  background: center/cover no-repeat url('/src/assets/plywood.jpg');
 }
 #woods:hover{
   cursor: pointer;
-  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),
-  center/cover no-repeat url('/src/assets/plywood.jpg');
+  background: center/cover no-repeat url('/src/assets/plywood.jpg');
 }
 .row-1 {
   grid-row: 1;
@@ -358,8 +371,8 @@
   }
 }
 #mower:hover{
-  background-color: black;
-  opacity: 0.4;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: background-color .3s ease-in-out;
   cursor: pointer;
 }
 .row-element {
@@ -389,7 +402,8 @@
 }
 
 .btn:hover {
-  background: linear-gradient(to right, rgb(83, 81, 81), black);
+  background-color: black;
+  transition: background-color .3s ease-in-out;
   cursor: pointer;
 }
 
